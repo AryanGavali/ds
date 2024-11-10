@@ -5,7 +5,7 @@
 char stack[25];
 int top = -1;
 
-void push(char c) 
+void push(char c)
 {
     top++;
     stack[top] = c;
@@ -22,16 +22,16 @@ char pop()
 int isp(char c) // In stack Precedence
 {
     if (c == '+' || c == '-')
-        return (1); 
+        return (1);
     if (c == '*' || c == '/' || c == '%')
         return (2);
-    if (c == '^')           //3 4 4 3 
+    if (c == '^')           //3 4 4 3
         return (3);
     if (c == '(')           // isp - 0 ,icp 5
         return (0);
     else
         return (-1);
-} 
+}
 
 int icp(char c) // incoming precendence
 {
